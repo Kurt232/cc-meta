@@ -53,6 +53,7 @@ trap - EXIT
 ```
 
 ### Rules
+- Read README.md
 - NEVER delete existing working features
 - NEVER modify CLAUDE.md without explicit human approval
 - NEVER access files outside this repo
