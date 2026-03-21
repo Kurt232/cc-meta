@@ -8,15 +8,6 @@ cd "$PROJECT_DIR"
 [ ! -f TASKS.md ]    && touch TASKS.md    && echo "Created TASKS.md"
 cat > TASKS.md << 'EOF'
 # Tasks
-
-## Pending
-
-<!-- Please use `- [ ] ...` -->
-
-## In Progress
-
-## Done
-
 EOF
 
 [ ! -f PROGRESS.md ] && touch PROGRESS.md && echo "Created PROGRESS.md"
