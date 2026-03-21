@@ -38,11 +38,18 @@ or edit the file at its absolute path directly.
 多个 worker 并行时，每个 worker 运行在独立的 git worktree（独立目录和分支）中。
 全程本地操作，不需要和 remote 交互。
 
-完成任务后，在 worker branch 上合并回 main：
+完成任务后，在 worker branch 上合并回 main（加锁防止并发覆盖）：
 ```bash
-git rebase main                      # 在 worker branch 上 rebase
+LOCK="$(git rev-parse --git-common-dir)/merge.lock"
+while ! mkdir "$LOCK" 2>/dev/null; do sleep 1; done
+trap 'rmdir "$LOCK" 2>/dev/null' EXIT
+
+git rebase main              # 在 worker branch 上 rebase
 # 如果冲突：解决后 git rebase --continue
-git checkout main && git merge --ff-only <worker-branch>
+git branch -f main HEAD      # 把 main 指向当前 HEAD
+
+rmdir "$LOCK" 2>/dev/null
+trap - EXIT
 ```
 
 ### Rules
