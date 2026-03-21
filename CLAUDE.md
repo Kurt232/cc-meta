@@ -36,7 +36,14 @@ or edit the file at its absolute path directly.
 
 ### Multi-Worker
 多个 worker 并行时，每个 worker 运行在独立的 git worktree（独立目录和分支）中。
-完成任务后 merge 回 main，全程本地操作，不需要和 remote 交互。
+全程本地操作，不需要和 remote 交互。
+
+完成任务后，在 worker branch 上合并回 main：
+```bash
+git rebase main                      # 在 worker branch 上 rebase
+# 如果冲突：解决后 git rebase --continue
+git checkout main && git merge --ff-only <worker-branch>
+```
 
 ### Rules
 - NEVER delete existing working features
