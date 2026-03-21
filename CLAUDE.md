@@ -3,18 +3,18 @@
 ### First Run
 If README.md is empty, this is a new project. Run `./setup.sh` if needed, then:
 1. Ask the user to describe the project
-2. Write project description, tech stack, and architecture to README.md
-3. Write initial tasks to tasks.md
+2. Write project description, repo structure, tech stack and architecture to README.md
+3. Write initial TASKS to TASKS.md
 4. Set up .gitignore based on the tech stack
 5. Commit: `init: bootstrap project`
 
 ### Your Workflow
-1. Read tasks.md → pick the top unchecked task
+1. Read TASKS.md → pick the top unchecked task
 2. Plan your approach (think before coding)
 3. Implement with tests if applicable
 4. Commit with a clear message
 5. Update PROGRESS.md with lessons learned (see format below)
-6. Mark the task done in tasks.md
+6. Mark the task done in TASKS.md
 7. Exit
 
 ### PROGRESS.md Format
