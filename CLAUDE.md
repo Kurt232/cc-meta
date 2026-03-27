@@ -12,9 +12,9 @@ If README.md is empty, this is a new project. Run `./setup.sh` if needed, then:
 1. Read TASKS.md → pick the top unchecked task
 2. Plan your approach (think before coding)
 3. Implement with tests if applicable
-4. Commit with a clear message
-5. Update PROGRESS.md with lessons learned (see format below)
-6. Mark the task done in TASKS.md
+4. Update PROGRESS.md with lessons learned (see format below)
+5. Mark the task done in TASKS.md
+6. Commit with a clear message
 7. Exit
 
 ### PROGRESS.md Format
